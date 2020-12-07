@@ -32,8 +32,6 @@ namespace CodliImageOptimizer
 
         private void CloseBtn_Click(object sender, EventArgs e) => Application.Exit();
 
-        #endregion
-
         private void ImageOptimizer_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
@@ -54,6 +52,10 @@ namespace CodliImageOptimizer
         {
             mouseDown = false;
         }
+
+        #endregion
+
+        #region Single file operations
 
         private async void ChooseFile_Click(object sender, EventArgs e)
         {
@@ -98,5 +100,13 @@ namespace CodliImageOptimizer
                 }
             }
         }
+
+        #endregion
+
+        #region Multi files operations
+
+
+
+        #endregion
     }
 }
