@@ -46,7 +46,7 @@ namespace CodliImageOptimizer
             this.ChooseFile = new System.Windows.Forms.Button();
             this.SingleFilePathbox = new System.Windows.Forms.TextBox();
             this.DirectoryOperations = new System.Windows.Forms.TabPage();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.CodliProgress = new System.Windows.Forms.ProgressBar();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.SingleFileQualitySlider = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
@@ -235,6 +235,7 @@ namespace CodliImageOptimizer
             this.ChooseFile.TabIndex = 1;
             this.ChooseFile.Text = "...";
             this.ChooseFile.UseVisualStyleBackColor = true;
+            this.ChooseFile.Click += new System.EventHandler(this.ChooseFile_Click);
             // 
             // SingleFilePathbox
             // 
@@ -255,12 +256,12 @@ namespace CodliImageOptimizer
             this.DirectoryOperations.Text = "Directories";
             this.DirectoryOperations.UseVisualStyleBackColor = true;
             // 
-            // progressBar1
+            // CodliProgress
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 597);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(777, 23);
-            this.progressBar1.TabIndex = 3;
+            this.CodliProgress.Location = new System.Drawing.Point(12, 597);
+            this.CodliProgress.Name = "CodliProgress";
+            this.CodliProgress.Size = new System.Drawing.Size(777, 23);
+            this.CodliProgress.TabIndex = 3;
             // 
             // groupBox4
             // 
@@ -407,7 +408,7 @@ namespace CodliImageOptimizer
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(35)))), ((int)(((byte)(126)))));
             this.ClientSize = new System.Drawing.Size(800, 632);
             this.ControlBox = false;
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.CodliProgress);
             this.Controls.Add(this.AppTabHolder);
             this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.MinimizeBtn);
@@ -462,7 +463,7 @@ namespace CodliImageOptimizer
         private System.Windows.Forms.RadioButton singleOutputFormatJpeg;
         private System.Windows.Forms.GroupBox ImagePreviewGroup;
         private System.Windows.Forms.PictureBox SingleImagePreview;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar CodliProgress;
         private System.Windows.Forms.CheckBox OverwriteSingleBox;
         private System.Windows.Forms.Button SingleFileOptimizeBtn;
         private System.Windows.Forms.GroupBox groupBox5;

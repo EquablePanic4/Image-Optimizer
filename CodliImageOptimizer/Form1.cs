@@ -1,8 +1,10 @@
-﻿using System;
+﻿using SixLabors.ImageSharp.PixelFormats;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +53,50 @@ namespace CodliImageOptimizer
         private void ImageOptimizer_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private async void ChooseFile_Click(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "image files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+
+                    //We're setting image
+                    SingleImagePreview.ImageLocation = filePath;
+                    SingleFilePathbox.Text = filePath;
+
+                    //And other options...
+                    var ext = Path.GetExtension(filePath).ToLower();
+                    switch (ext)
+                    {
+                        case ".jpg" or ".jpeg":
+                            singleOutputFormatJpeg.Checked = true;
+                            break;
+
+                        default:
+                            singleOutputFormatPng.Checked = true;
+                            break;
+                    }
+
+                    //We're looking for image properties
+                    using (var img = await SixLabors.ImageSharp.Image.LoadAsync<Rgb24>(filePath))
+                    {
+                        SingleFileHightBox.Text = $"{img.Height} px";
+                        SingleFileWidthBox.Text = $"{img.Width} px";
+                    }
+                }
+            }
         }
     }
 }
