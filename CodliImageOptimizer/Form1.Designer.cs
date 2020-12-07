@@ -35,7 +35,21 @@ namespace CodliImageOptimizer
             this.InfoLabel = new System.Windows.Forms.Label();
             this.AppTabHolder = new System.Windows.Forms.TabControl();
             this.SingleFileOperationsTab = new System.Windows.Forms.TabPage();
+            this.OverwriteSingleBox = new System.Windows.Forms.CheckBox();
+            this.SingleFileOptimizeBtn = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.SingleFileHightBox = new System.Windows.Forms.TextBox();
+            this.SingleFileWidthBox = new System.Windows.Forms.TextBox();
+            this.SingleFileSizeSlider = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.SingleFileQualityBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.SingleFileQualitySlider = new System.Windows.Forms.TrackBar();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.singleOutputFormatPng = new System.Windows.Forms.RadioButton();
             this.singleOutputFormatJpg = new System.Windows.Forms.RadioButton();
@@ -47,31 +61,17 @@ namespace CodliImageOptimizer
             this.SingleFilePathbox = new System.Windows.Forms.TextBox();
             this.DirectoryOperations = new System.Windows.Forms.TabPage();
             this.CodliProgress = new System.Windows.Forms.ProgressBar();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.SingleFileQualitySlider = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.SingleFileWidthBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SingleFileHightBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.SingleFileOptimizeBtn = new System.Windows.Forms.Button();
-            this.OverwriteSingleBox = new System.Windows.Forms.CheckBox();
             this.AppTabHolder.SuspendLayout();
             this.SingleFileOperationsTab.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SingleFileSizeSlider)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SingleFileQualitySlider)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.ImagePreviewGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.SingleImagePreview)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SingleFileQualitySlider)).BeginInit();
-            this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // CloseBtn
@@ -139,6 +139,96 @@ namespace CodliImageOptimizer
             this.SingleFileOperationsTab.TabIndex = 0;
             this.SingleFileOperationsTab.Text = "Single files";
             // 
+            // OverwriteSingleBox
+            // 
+            this.OverwriteSingleBox.AutoSize = true;
+            this.OverwriteSingleBox.Location = new System.Drawing.Point(11, 463);
+            this.OverwriteSingleBox.Name = "OverwriteSingleBox";
+            this.OverwriteSingleBox.Size = new System.Drawing.Size(80, 19);
+            this.OverwriteSingleBox.TabIndex = 5;
+            this.OverwriteSingleBox.Text = "Overwrite";
+            this.OverwriteSingleBox.UseVisualStyleBackColor = true;
+            // 
+            // SingleFileOptimizeBtn
+            // 
+            this.SingleFileOptimizeBtn.Location = new System.Drawing.Point(11, 488);
+            this.SingleFileOptimizeBtn.Name = "SingleFileOptimizeBtn";
+            this.SingleFileOptimizeBtn.Size = new System.Drawing.Size(378, 35);
+            this.SingleFileOptimizeBtn.TabIndex = 4;
+            this.SingleFileOptimizeBtn.Text = "Start";
+            this.SingleFileOptimizeBtn.UseVisualStyleBackColor = true;
+            this.SingleFileOptimizeBtn.Click += new System.EventHandler(this.SingleFileOptimizeBtn_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.label4);
+            this.groupBox5.Controls.Add(this.SingleFileHightBox);
+            this.groupBox5.Controls.Add(this.SingleFileWidthBox);
+            this.groupBox5.Controls.Add(this.SingleFileSizeSlider);
+            this.groupBox5.Controls.Add(this.label5);
+            this.groupBox5.Controls.Add(this.label3);
+            this.groupBox5.Location = new System.Drawing.Point(4, 317);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(385, 139);
+            this.groupBox5.TabIndex = 3;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Image size";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(120, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "X";
+            // 
+            // SingleFileHightBox
+            // 
+            this.SingleFileHightBox.Enabled = false;
+            this.SingleFileHightBox.Location = new System.Drawing.Point(141, 52);
+            this.SingleFileHightBox.Name = "SingleFileHightBox";
+            this.SingleFileHightBox.Size = new System.Drawing.Size(100, 22);
+            this.SingleFileHightBox.TabIndex = 1;
+            // 
+            // SingleFileWidthBox
+            // 
+            this.SingleFileWidthBox.Enabled = false;
+            this.SingleFileWidthBox.Location = new System.Drawing.Point(14, 52);
+            this.SingleFileWidthBox.Name = "SingleFileWidthBox";
+            this.SingleFileWidthBox.Size = new System.Drawing.Size(100, 22);
+            this.SingleFileWidthBox.TabIndex = 1;
+            // 
+            // SingleFileSizeSlider
+            // 
+            this.SingleFileSizeSlider.Enabled = false;
+            this.SingleFileSizeSlider.Location = new System.Drawing.Point(7, 88);
+            this.SingleFileSizeSlider.Maximum = 100;
+            this.SingleFileSizeSlider.Minimum = 1;
+            this.SingleFileSizeSlider.Name = "SingleFileSizeSlider";
+            this.SingleFileSizeSlider.Size = new System.Drawing.Size(359, 45);
+            this.SingleFileSizeSlider.TabIndex = 0;
+            this.SingleFileSizeSlider.Value = 100;
+            this.SingleFileSizeSlider.Scroll += new System.EventHandler(this.SingleFileSizeSlider_Scroll);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(141, 34);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Hight (px)";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 34);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Width (px)";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.groupBox4);
@@ -149,6 +239,59 @@ namespace CodliImageOptimizer
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Options";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.SingleFileQualityBox);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.SingleFileQualitySlider);
+            this.groupBox4.Location = new System.Drawing.Point(7, 127);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(372, 109);
+            this.groupBox4.TabIndex = 1;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Output quality";
+            // 
+            // SingleFileQualityBox
+            // 
+            this.SingleFileQualityBox.Location = new System.Drawing.Point(100, 81);
+            this.SingleFileQualityBox.Name = "SingleFileQualityBox";
+            this.SingleFileQualityBox.Size = new System.Drawing.Size(100, 22);
+            this.SingleFileQualityBox.TabIndex = 2;
+            this.SingleFileQualityBox.Text = "60";
+            this.SingleFileQualityBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.SingleFileQualityBox.TextChanged += new System.EventHandler(this.SingleFileQualityBox_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(206, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(22, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "%";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(87, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Output quality:";
+            // 
+            // SingleFileQualitySlider
+            // 
+            this.SingleFileQualitySlider.Location = new System.Drawing.Point(7, 33);
+            this.SingleFileQualitySlider.Maximum = 100;
+            this.SingleFileQualitySlider.Minimum = 1;
+            this.SingleFileQualitySlider.Name = "SingleFileQualitySlider";
+            this.SingleFileQualitySlider.Size = new System.Drawing.Size(359, 45);
+            this.SingleFileQualitySlider.TabIndex = 0;
+            this.SingleFileQualitySlider.Value = 60;
+            this.SingleFileQualitySlider.Scroll += new System.EventHandler(this.SingleFileQualitySlider_Scroll);
             // 
             // groupBox3
             // 
@@ -263,144 +406,6 @@ namespace CodliImageOptimizer
             this.CodliProgress.Size = new System.Drawing.Size(777, 23);
             this.CodliProgress.TabIndex = 3;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.label1);
-            this.groupBox4.Controls.Add(this.SingleFileQualitySlider);
-            this.groupBox4.Location = new System.Drawing.Point(7, 127);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(372, 109);
-            this.groupBox4.TabIndex = 1;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Output quality";
-            // 
-            // SingleFileQualitySlider
-            // 
-            this.SingleFileQualitySlider.Location = new System.Drawing.Point(7, 33);
-            this.SingleFileQualitySlider.Maximum = 100;
-            this.SingleFileQualitySlider.Minimum = 1;
-            this.SingleFileQualitySlider.Name = "SingleFileQualitySlider";
-            this.SingleFileQualitySlider.Size = new System.Drawing.Size(359, 45);
-            this.SingleFileQualitySlider.TabIndex = 0;
-            this.SingleFileQualitySlider.Value = 60;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Output quality:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(100, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "60";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(206, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "%";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.SingleFileHightBox);
-            this.groupBox5.Controls.Add(this.SingleFileWidthBox);
-            this.groupBox5.Controls.Add(this.trackBar1);
-            this.groupBox5.Controls.Add(this.label5);
-            this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Location = new System.Drawing.Point(4, 317);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(385, 139);
-            this.groupBox5.TabIndex = 3;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Image size";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 34);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Width (px)";
-            // 
-            // SingleFileWidthBox
-            // 
-            this.SingleFileWidthBox.Enabled = false;
-            this.SingleFileWidthBox.Location = new System.Drawing.Point(14, 52);
-            this.SingleFileWidthBox.Name = "SingleFileWidthBox";
-            this.SingleFileWidthBox.Size = new System.Drawing.Size(100, 22);
-            this.SingleFileWidthBox.TabIndex = 1;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(120, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(15, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "X";
-            // 
-            // SingleFileHightBox
-            // 
-            this.SingleFileHightBox.Enabled = false;
-            this.SingleFileHightBox.Location = new System.Drawing.Point(141, 52);
-            this.SingleFileHightBox.Name = "SingleFileHightBox";
-            this.SingleFileHightBox.Size = new System.Drawing.Size(100, 22);
-            this.SingleFileHightBox.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 34);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Hight (px)";
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(7, 88);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(359, 45);
-            this.trackBar1.TabIndex = 0;
-            this.trackBar1.Value = 100;
-            // 
-            // SingleFileOptimizeBtn
-            // 
-            this.SingleFileOptimizeBtn.Location = new System.Drawing.Point(11, 488);
-            this.SingleFileOptimizeBtn.Name = "SingleFileOptimizeBtn";
-            this.SingleFileOptimizeBtn.Size = new System.Drawing.Size(378, 35);
-            this.SingleFileOptimizeBtn.TabIndex = 4;
-            this.SingleFileOptimizeBtn.Text = "Start";
-            this.SingleFileOptimizeBtn.UseVisualStyleBackColor = true;
-            // 
-            // OverwriteSingleBox
-            // 
-            this.OverwriteSingleBox.AutoSize = true;
-            this.OverwriteSingleBox.Location = new System.Drawing.Point(11, 463);
-            this.OverwriteSingleBox.Name = "OverwriteSingleBox";
-            this.OverwriteSingleBox.Size = new System.Drawing.Size(80, 19);
-            this.OverwriteSingleBox.TabIndex = 5;
-            this.OverwriteSingleBox.Text = "Overwrite";
-            this.OverwriteSingleBox.UseVisualStyleBackColor = true;
-            // 
             // ImageOptimizer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -427,19 +432,19 @@ namespace CodliImageOptimizer
             this.AppTabHolder.ResumeLayout(false);
             this.SingleFileOperationsTab.ResumeLayout(false);
             this.SingleFileOperationsTab.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SingleFileSizeSlider)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SingleFileQualitySlider)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ImagePreviewGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SingleImagePreview)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.SingleFileQualitySlider)).EndInit();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,11 +475,11 @@ namespace CodliImageOptimizer
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox SingleFileHightBox;
         private System.Windows.Forms.TextBox SingleFileWidthBox;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar SingleFileSizeSlider;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox SingleFileQualityBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TrackBar SingleFileQualitySlider;
