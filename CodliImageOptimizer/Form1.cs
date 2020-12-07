@@ -12,14 +12,45 @@ namespace CodliImageOptimizer
 {
     public partial class ImageOptimizer : Form
     {
+        #region Construct and fields
+
+        private bool mouseDown = false;
+        private Point lastLocation;
+
         public ImageOptimizer()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        #endregion
 
+        #region Managing the window
+
+        private void MinimizeBtn_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
+
+        private void CloseBtn_Click(object sender, EventArgs e) => Application.Exit();
+
+        #endregion
+
+        private void ImageOptimizer_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown)
+            {
+                this.Location = new Point((this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
+
+                this.Update();
+            }
+        }
+
+        private void ImageOptimizer_MouseDown(object sender, MouseEventArgs e)
+        {
+            lastLocation = e.Location;
+            mouseDown = true;
+        }
+
+        private void ImageOptimizer_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
